@@ -25,7 +25,7 @@ img.addEventListener('dblclick', (event) => {
         event.target.style.height = "";
         event.target.style.width = "";
     }, 500);
-}, false);
+});
 
 const midImg = document.querySelector('.img-content');
 console.log(midImg);
@@ -38,4 +38,32 @@ midImg.addEventListener('mouseover', () => {
 const headFun = document.querySelector('.logo-heading');
 console.log(headFun);
 
+headFun.addEventListener('load', () => {
+    
+})
+
+const adventureAwaits = document.querySelector('.inverse-content .text-content');
+console.log(adventureAwaits);
+
+adventureAwaits.addEventListener('wheel', function () {
+    adventureAwaits.style.color = 'red';
+})
+
+
+const intro = document.querySelector('body');
+console.log(intro);
+
+intro.addEventListener('keyup', function () {
+    intro.style.backgroundColor = "pink";
+    
+
+    setTimeout( () => {
+        intro.style.backgroundColor = "";
+    }, 1000)
+}, true);
+
+
+window.addEventListener('load', (event) => {
+    alert('page is loaded')
+})
 
