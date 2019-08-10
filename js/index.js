@@ -51,11 +51,13 @@ console.log(midImg);
 midImg.addEventListener('mouseover', () => {
     midImg.style.height = "200px";
     midImg.style.width = "200px";
+    midImg.style.marginRight = "75px";
 
     setTimeout( () => {
         midImg.style.height = "";
         midImg.style.width = "";
-    }, 500);
+         midImg.style.marginRight = "";
+    }, 1000);
 
 });
 
@@ -74,9 +76,27 @@ const adventureAwaits = document.querySelector('.inverse-content .text-content')
 console.log(adventureAwaits);
 
 adventureAwaits.addEventListener('wheel', function () {
-    adventureAwaits.style.color = 'red';
+    adventureAwaits.style.display = 'flex';
+     adventureAwaits.style.backgroundColor = "lightblue";
 })
 
+const adventureImg = document.querySelector('.img-fluid');
+console.log(adventureImg);
+adventureImg.addEventListener('mouseover', () => {
+    adventureImg.style.width = '200px';
+    adventureImg.style.height = '150px';
+    adventureImg.style.marginLeft = '75px';
+   
+
+adventureImg.addEventListener('mouseleave', () => {
+    adventureImg.style.width = "";
+    adventureImg.style.height = "";
+    adventureImg.style.marginLeft = "";
+})
+}) 
+
+
+//color changing and font-change keys
 
 const intro = document.querySelector('body');
 console.log(intro);
@@ -109,24 +129,29 @@ window.addEventListener('keydown', function(e) {
   
 });
     
-
-const button = document.querySelector('.btn');
+//buttons
+const button = Array.from(document.querySelectorAll('.btn'));
 console.log(button);
 
-button.addEventListener('click', (event) => {
+button.forEach(link => {
+link.addEventListener('click', (event) => {
 event.target.style.color = "red";
-})
 
-const adventureImg = document.querySelector('.img-fluid');
-console.log(adventureImg);
-adventureImg.addEventListener('mouseover', () => {
-    adventureImg.style.width = '30rem';
-    adventureImg.style.height = '30rem';
-    // adventureImg.setAttribute('src', 'img/fun.jpg');
+setTimeout ( () => {
+    event.target.style.color = "";
+}, 500)
+});
+});
 
-adventureImg.addEventListener('mouseleave', () => {
-    adventureImg.style.width = "";
-    adventureImg.style.height = "";
-})
-}) 
+//Why is the signicants of the work "target" again?
+
+const inputFocus = document.querySelector('.focus');
+
+inputFocus.addEventListener('focus', function(e) {
+    e.target.style.background = "coral"
+});
+inputFocus.addEventListener('blur', function(e) {
+    e.target.style.background = ""
+});
+
 
